@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Smart TTS</title>
+
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Header -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <div class="logo">
+                🔊
+            </div>
+
+            <div>
+                <h1>Smart TTS</h1>
+                <p>Text to Speech</p>
+            </div>
+
+        </div>
+
+        <button
+            id="settingsBtn"
+            class="icon-btn"
+            title="Settings"
+        >
+            ⚙
+        </button>
+
+    </header>
+
+
+    <!-- Text input -->
+
+    <section class="text-section">
+
+        <div class="section-title">
+
+            <span>Text</span>
+
+            <span id="charCount">
+                0 characters
+            </span>
+
+        </div>
+
+        <textarea
+            id="textInput"
+            placeholder="Type or paste your text here..."
+            spellcheck="true"
+        ></textarea>
+
+        <div class="text-actions">
+
+            <button id="pasteBtn">
+                📋 Paste
+            </button>
+
+            <button id="clearBtn">
+                Clear
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Voice -->
+
+    <section class="settings">
+
+        <div class="setting">
+
+            <label for="voiceSelect">
+                Voice
+            </label>
+
+            <select id="voiceSelect">
+                <option>
+                    Loading voices...
+                </option>
+            </select>
+
+        </div>
+
+
+        <!-- Speed -->
+
+        <div class="slider-setting">
+
+            <div class="slider-header">
+
+                <label for="rate">
+                    Speed
+                </label>
+
+                <span id="rateValue">
+                    1.0x
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                id="rate"
+                min="0.5"
+                max="2"
+                value="1"
+                step="0.1"
+            >
+
+        </div>
+
+
+        <!-- Pitch -->
+
+        <div class="slider-setting">
+
+            <div class="slider-header">
+
+                <label for="pitch">
+                    Pitch
+                </label>
+
+                <span id="pitchValue">
+                    1.0
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                id="pitch"
+                min="0"
+                max="2"
+                value="1"
+                step="0.1"
+            >
+
+        </div>
+
+
+        <!-- Volume -->
+
+        <div class="slider-setting">
+
+            <div class="slider-header">
+
+                <label for="volume">
+                    Volume
+                </label>
+
+                <span id="volumeValue">
+                    100%
+                </span>
+
+            </div>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                value="1"
+                step="0.1"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- Controls -->
+
+    <section class="controls">
+
+        <button
+            id="speakBtn"
+            class="speak-btn"
+        >
+            <span>▶</span>
+            Speak
+        </button>
+
+        <button
+            id="pauseBtn"
+            class="control-btn"
+        >
+            ⏸
+        </button>
+
+        <button
+            id="stopBtn"
+            class="control-btn"
+        >
+            ⏹
+        </button>
+
+    </section>
+
+
+    <!-- Status -->
+
+    <div class="status">
+
+        <span id="statusDot"></span>
+
+        <span id="statusText">
+            Ready
+        </span>
+
+    </div>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <span>
+            Smart Text to Speech
+        </span>
+
+        <span>
+            Chrome Extension
+        </span>
+
+    </footer>
+
+</div>
+
+<script src="popup.js"></script>
+
+</body>
+</html>

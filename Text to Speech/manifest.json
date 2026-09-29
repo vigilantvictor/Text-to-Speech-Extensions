@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Text to Speech",
+  "version": "2.0.0",
+  "description": "Convert text to speech and read selected text from webpages.",
+  
+  "permissions": [
+    "contextMenus",
+    "storage"
+  ],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Smart Text to Speech"
+  },
+
+  "commands": {
+    "speak-selected-text": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S"
+      },
+      "description": "Speak selected text"
+    }
+  }
+}
